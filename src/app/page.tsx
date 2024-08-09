@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-between p-24">
@@ -24,7 +26,17 @@ export default function Home() {
           </TabsList>
 
           <TabsContent value="entrar">
-            <h1>form de login</h1>
+            <form action="" className="flex flex-col items-center gap-4">
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" id="email" placeholder="Email" />
+            </div>
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+              <Label htmlFor="password">Senha</Label>
+              <Input type="password" id="password"/>
+            </div>
+            <Button>Entrar</Button>
+            </form>
           </TabsContent>
 
           <TabsContent value="registrar">
